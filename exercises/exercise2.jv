@@ -7,7 +7,7 @@ pipeline TreesPipeline{
 
 block TreesExtractor oftype CSVExtractor {
         url:"https://opendata.rhein-kreis-neuss.de/api/v2/catalog/datasets/stadt-neuss-herbstpflanzung-2023/exports/csv";
-        
+        delimiter: ";";
      }
 
 //block TreesTextFileInterpreter oftype TextFileInterpreter { }
