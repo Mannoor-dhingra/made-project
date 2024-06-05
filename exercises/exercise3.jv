@@ -76,7 +76,7 @@ pipeline GoodsTransportByTrainPipeline{
 
     constraint germanmonthconstraint oftype AllowlistConstraint {
 
-        allowlist: ["Januar", "Februar",  "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
+        allowlist: ["Januar", "Februar","März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
 
     }
 
