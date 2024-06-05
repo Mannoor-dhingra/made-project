@@ -4,8 +4,6 @@ pipeline GoodsTransportByTrainPipeline{
         ->GoodsTransportByTrainTextFileInterpreter
         ->GoodsTransportByTrainCSVInterpreter
         ->GoodsTransportByTrainDataSelector
-        ->GoodsTransportByTrainHeaderWriter
-        ->GoodsTransportByTrainRenameHeader
         ->GoodsTransportByTrainColDeleter
         ->GoodsTransportByTrainTableInterpreter
         ->GoodsTransportByTrainLoader;
@@ -87,23 +85,11 @@ pipeline GoodsTransportByTrainPipeline{
 
     }
 
-    block GoodsTransportByTrainHeaderWriter oftype CellWriter
-    {
-        at: range A1:E1;
-        // New names: 'year', 'month', 'goods_id', 'goods_name', 'goods_source'
-        write: ["year", "month", "goods_id", "goods_name", "goods_source"];
-    }
-
-    block GoodsTransportByTrainRenameHeader oftype CellWriter
-    {
-        at: range AT1:AU1;
-        // New names: 'abroad', 'total'
-        write: [ "abroad", "total"];
-    }
+   
 
     block GoodsTransportByTrainTableInterpreter oftype TableInterpreter {
 
-        header: true;
+        header: false;
         columns: [
 
             "year" oftype positiveinteger,
