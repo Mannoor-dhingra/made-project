@@ -4,9 +4,9 @@ pipeline GoodsTransportByTrainPipeline{
         ->GoodsTransportByTrainTextFileInterpreter
         ->GoodsTransportByTrainCSVInterpreter
         ->GoodsTransportByTrainDataSelector
-        ->GoodsTransportByTrainColDeleter
         ->GoodsTransportByTrainHeaderWriter
         ->GoodsTransportByTrainRenameHeader
+        ->GoodsTransportByTrainColDeleter
         ->GoodsTransportByTrainTableInterpreter
         ->GoodsTransportByTrainLoader;
 
@@ -124,39 +124,4 @@ pipeline GoodsTransportByTrainPipeline{
         file: './goodsTransportedByTrain.sqlite';
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
